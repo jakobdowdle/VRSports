@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ClubPhysicsBehaviour : MonoBehaviour
@@ -19,18 +17,16 @@ public class ClubPhysicsBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _headPositionLast = new Vector3(_headPositionCurrent.x, _headPositionCurrent.y, _headPositionCurrent.z);
-        _headPositionCurrent = new Vector3(_headPoint.transform.position.x, _headPoint.transform.position.y, _headPoint.transform.position.z);
+        _headPositionLast = _headPositionCurrent;
+        _headPositionCurrent = _headPoint.transform.position;
     }
 
     private void OnCollisionEnter(UnityEngine.Collision collision)
     {
         if (collision.gameObject.tag != "ball") return;
 
-        //Direction club is swinging
-        Vector3 swingDirection = _headPositionCurrent - _headPositionLast;
+        Vector3 swingDirection = (_headPositionCurrent - _headPositionLast).normalized;
         //Add collision force and direction to ball
-        collision.gameObject.GetComponent<BallPhysicsBehaviour>().hitWithClub(swingDirection * 1000, collision.transform.position);
+        collision.gameObject.GetComponent<BallPhysicsBehaviour>().HitWithClub(swingDirection * 1000, collision.transform.position);
     }
-
 }
