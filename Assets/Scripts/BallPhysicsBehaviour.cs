@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BallPhysicsBehaviour : MonoBehaviour
 {
-    private Rigidbody _rb;
+    private Rigidbody _rigidBody;
     void Start()
     {
-        _rb = GetComponent<Rigidbody>();
+        _rigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -16,9 +16,9 @@ public class BallPhysicsBehaviour : MonoBehaviour
         
     }
 
-    public void hitWithClub(Vector3 force, Vector3 position)
+    public void HitWithClub(Vector3 force, Vector3 position)
     {
         Debug.Log("HIT");
-        _rb.AddForceAtPosition(force, position);
+        _rigidBody.AddForceAtPosition(force, position);
     }
 }
