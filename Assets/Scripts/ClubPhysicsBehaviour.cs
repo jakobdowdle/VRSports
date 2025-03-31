@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ClubPhysicsBehaviour : MonoBehaviour
@@ -7,6 +8,7 @@ public class ClubPhysicsBehaviour : MonoBehaviour
     [SerializeField] private float _angleCorrectionPercentage;
     private Vector3 _headPositionLast;
     private Vector3 _headPositionCurrent;
+    private bool _onCoolDown;
 
     private void FixedUpdate()
     {
@@ -18,6 +20,10 @@ public class ClubPhysicsBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag != "ball") return;
 
+        if (_onCoolDown) return;
+
+        _onCoolDown = true;
+
         BallPhysicsBehaviour ball = collision.gameObject.GetComponent<BallPhysicsBehaviour>();
 
         Vector3 holeDirection = (ball.transform.position - HoleManager.Instance.transform.position).normalized;
@@ -26,5 +32,11 @@ public class ClubPhysicsBehaviour : MonoBehaviour
         
         //Add collision force and direction to ball
         ball.HitWithClub(launchDirection * _clubHitForce, collision.transform.position);
+    }
+
+    private IEnumerator HitCooldown()
+    {
+        yield return new WaitForSeconds(2);
+        _onCoolDown = false;
     }
 }
