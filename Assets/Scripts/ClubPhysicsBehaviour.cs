@@ -7,15 +7,6 @@ public class ClubPhysicsBehaviour : MonoBehaviour
     [SerializeField] private float _angleCorrectionPercentage;
     private Vector3 _headPositionLast;
     private Vector3 _headPositionCurrent;
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
     private void FixedUpdate()
     {
@@ -23,7 +14,7 @@ public class ClubPhysicsBehaviour : MonoBehaviour
         _headPositionCurrent = _headPoint.transform.position;
     }
 
-    private void OnCollisionEnter(UnityEngine.Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag != "ball") return;
 
