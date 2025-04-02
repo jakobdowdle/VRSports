@@ -1,17 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HoleManager : MonoBehaviour
 {
     public ParticleSystem ConfettiEffect;
     public static HoleManager Instance;
-    void Start()
+    private void Awake()
     {
         Instance = this;
+    }
+    void Start()
+    {
         ConfettiEffect = GetComponent<ParticleSystem>();
     }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag != "ball") return;

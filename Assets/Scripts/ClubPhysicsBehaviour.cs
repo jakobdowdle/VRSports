@@ -5,9 +5,8 @@ public class ClubPhysicsBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject _headPoint;
     [SerializeField] private float _clubHitForce;
-    [SerializeField] private float _angleCorrectionPercentage;
-    private Vector3 _headPositionLast;
-    private Vector3 _headPositionCurrent;
+    [SerializeField, Range(0, 1)] private float _angleCorrectionPercentage;
+    private Vector3 _headPositionLast, _headPositionCurrent;
     private bool _onCoolDown;
 
     private void FixedUpdate()
@@ -21,8 +20,7 @@ public class ClubPhysicsBehaviour : MonoBehaviour
         if (collision.gameObject.tag != "ball") return;
 
         //if (_onCoolDown) return;
-
-        _onCoolDown = true;
+        StartCoroutine(HitCooldown());
 
         BallPhysicsBehaviour ball = collision.gameObject.GetComponent<BallPhysicsBehaviour>();
 
@@ -41,6 +39,7 @@ public class ClubPhysicsBehaviour : MonoBehaviour
 
     private IEnumerator HitCooldown()
     {
+        _onCoolDown = true;
         yield return new WaitForSeconds(2);
         _onCoolDown = false;
     }
