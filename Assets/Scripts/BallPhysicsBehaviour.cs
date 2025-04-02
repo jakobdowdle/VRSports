@@ -12,6 +12,8 @@ public class BallPhysicsBehaviour : MonoBehaviour
 
     public void HitWithClub(Vector3 force, Vector3 position)
     {
+        Debug.Log("HIT");
+        Debug.Log(force);
         _rigidBody.AddForceAtPosition(force, position);
     }
 
