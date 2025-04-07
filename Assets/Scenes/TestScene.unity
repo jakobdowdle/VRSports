@@ -122,27 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &196711959 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 844642834545593991, guid: b3711a16ab8d93441a03b96607064d91, type: 3}
-  m_PrefabInstance: {fileID: 2338254084987332299}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &196711965
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196711959}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &299639867
 GameObject:
   m_ObjectHideFlags: 0
@@ -5404,16 +5383,16 @@ PrefabInstance:
       value: Driver
       objectReference: {fileID: 0}
     - target: {fileID: 3250631715825331354, guid: b3711a16ab8d93441a03b96607064d91, type: 3}
-      propertyPath: m_Convex
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250631715825331354, guid: b3711a16ab8d93441a03b96607064d91, type: 3}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3727844979239207873, guid: b3711a16ab8d93441a03b96607064d91, type: 3}
       propertyPath: m_Convex
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6359667274027973760, guid: b3711a16ab8d93441a03b96607064d91, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6600380213079913139, guid: b3711a16ab8d93441a03b96607064d91, type: 3}
       propertyPath: m_RootOrder
@@ -5559,7 +5538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1698356332527775604, guid: b02e7fdb68f92dc409aef266aedfd363, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.7096
       objectReference: {fileID: 0}
     - target: {fileID: 1698356332527775604, guid: b02e7fdb68f92dc409aef266aedfd363, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5567,7 +5546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1698356332527775604, guid: b02e7fdb68f92dc409aef266aedfd363, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.0121
       objectReference: {fileID: 0}
     - target: {fileID: 1698356332527775604, guid: b02e7fdb68f92dc409aef266aedfd363, type: 3}
       propertyPath: m_LocalRotation.w

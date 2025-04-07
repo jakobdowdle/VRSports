@@ -14,7 +14,10 @@ public class ClubPhysicsBehaviour : MonoBehaviour
         _headPositionLast = _headPositionCurrent;
         _headPositionCurrent = _headPoint.transform.position;
     }
+    private void OnTriggerEnter(Collider other)
+    {
 
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag != "ball") return;
