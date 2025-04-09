@@ -25,10 +25,10 @@ public class BallPhysicsBehaviour : MonoBehaviour
         _objectRenderer.enabled = false;
         _rigidBody.velocity = Vector3.zero;
         _trailRenderer.enabled = false;
-        StartCoroutine(waitAndSpawnAtNextHole());
+        StartCoroutine(WaitAndSpawnAtNextHole());
     }
 
-    private IEnumerator waitAndSpawnAtNextHole()
+    private IEnumerator WaitAndSpawnAtNextHole()
     {
         yield return new WaitForSeconds(_respawnTimer);
         transform.position = GameManager.Instance.GetCurrentHole().GetComponent<HoleManager>().BallStartPosition;

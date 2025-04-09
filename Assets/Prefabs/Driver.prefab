@@ -295,7 +295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad502956ffcb38f49a41df78fda384e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.363
+      value: -0.3531
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad502956ffcb38f49a41df78fda384e7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -369,6 +369,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!65 &3037117988572351127
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844642834545593991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20012888, y: 0.09585027, z: 0.04017115}
+  m_Center: {x: 0.07405671, y: 0.00096381834, z: -0.0023887684}
 --- !u!64 &3250631715825331354
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -378,7 +391,7 @@ MeshCollider:
   m_GameObject: {fileID: 844642834545593991}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -398,6 +411,7 @@ MonoBehaviour:
   _headPoint: {fileID: 3997514611534922051}
   _clubHitForce: 100
   _angleCorrectionPercentage: 0.256
+  _upwardAngleAdjustmentPercentage: 0
 --- !u!1001 &672623626580486192
 PrefabInstance:
   m_ObjectHideFlags: 0
