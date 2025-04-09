@@ -689,7 +689,7 @@
                 {
                     "name": "",
                     "id": "885d867d-1696-4cbf-8c24-96623df2c835",
-                    "path": "<QuestTouchPlusController>/primaryButton",
+                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",

@@ -412,6 +412,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95858666}
   m_CullTransparentMesh: 1
+--- !u!1 &243776338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9014170785475729474, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 440674625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &243776343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243776338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017a58243a84ef84eaef8e9258833fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wristMenu: {fileID: 1720921643}
+  inputActionAsset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &315718367
 GameObject:
   m_ObjectHideFlags: 0
@@ -2316,7 +2335,6 @@ GameObject:
   - component: {fileID: 1720921646}
   - component: {fileID: 1720921645}
   - component: {fileID: 1720921644}
-  - component: {fileID: 1720921649}
   m_Layer: 5
   m_Name: Wrist Menu
   m_TagString: Untagged
@@ -2426,19 +2444,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0206, y: 0.14235997}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1720921649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720921643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017a58243a84ef84eaef8e9258833fd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _wristMenu: {fileID: 0}
 --- !u!1 &2055007137
 GameObject:
   m_ObjectHideFlags: 0

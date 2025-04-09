@@ -1,32 +1,29 @@
 using UnityEngine;
-using UnityEngine.XR;
+using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class WristMenuBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject _wristMenu;
     private InputDevice _controller;
+    public InputActionAsset inputActionAsset;
+    private InputAction _openMenu;
 
     void Start() {
-        // Find the input device associated with the right controller (or adjust for your specific controller)
-        var leftHandController = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
-        if (leftHandController.isValid) {
-            _controller = leftHandController;
-            Debug.Log("omar");
-        }
+        _openMenu = inputActionAsset.FindAction("Open Menu");
     }
 
     void Update() {
-        // Check if the A button is pressed
-        if (_controller.isValid) {
-            bool isPressed;
-            if (_controller.TryGetFeatureValue(CommonUsages.primaryButton, out isPressed) && isPressed) {
-                // The A button was pressed
-                Debug.Log("omar");
-                ToggleWristMenu();
-            }
+        if (_openMenu.triggered)
+        {
+            //Debug.Log(_wristMenu.activeSelf);
+            ToggleWristMenu();
         }
+        //Debug.Log(_wristMenu.activeSelf);
+
     }
     private void ToggleWristMenu() {
+        //Debug.Log(_wristMenu.activeSelf);
         _wristMenu.SetActive(!_wristMenu.activeSelf);
 
     }
