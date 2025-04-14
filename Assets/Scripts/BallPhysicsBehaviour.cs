@@ -12,7 +12,7 @@ public class BallPhysicsBehaviour : MonoBehaviour
         _rigidBody = GetComponent<Rigidbody>();
         _objectRenderer = GetComponent<Renderer>();
         _trailRenderer = GetComponent<TrailRenderer>();
-        transform.position = GameManager.Instance.GetCurrentHole().GetComponent<HoleManager>().BallStartPosition;
+        transform.position = GameManager.Instance.GetCurrentHoleManager().GetComponent<HoleManager>().BallStartPosition;
     }
 
     public void HitWithClub(Vector3 force, Vector3 position)
@@ -31,7 +31,7 @@ public class BallPhysicsBehaviour : MonoBehaviour
     private IEnumerator WaitAndSpawnAtNextHole()
     {
         yield return new WaitForSeconds(_respawnTimer);
-        transform.position = GameManager.Instance.GetCurrentHole().GetComponent<HoleManager>().BallStartPosition;
+        transform.position = GameManager.Instance.GetCurrentHoleManager().GetComponent<HoleManager>().BallStartPosition;
         _objectRenderer.enabled = true;
         _trailRenderer.enabled = true;
     }

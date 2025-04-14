@@ -14,10 +14,6 @@ public class ClubPhysicsBehaviour : MonoBehaviour
         _headPositionLast = _headPositionCurrent;
         _headPositionCurrent = _headPoint.transform.position;
     }
-    private void OnTriggerEnter(Collider other)
-    {
-
-    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag != "ball") return;
@@ -29,7 +25,7 @@ public class ClubPhysicsBehaviour : MonoBehaviour
 
         BallPhysicsBehaviour ball = collision.gameObject.GetComponent<BallPhysicsBehaviour>();
 
-        Vector3 holeDirection = (ball.transform.position - GameManager.Instance.GetCurrentHole().transform.position).normalized;
+        Vector3 holeDirection = (ball.transform.position - GameManager.Instance.GetCurrentHoleManager().transform.position).normalized;
         Vector3 swingDirection = (_headPositionCurrent - _headPositionLast).normalized;
         Vector3 launchDirection = Vector3.Lerp(swingDirection, holeDirection, _angleCorrectionPercentage);
         launchDirection += Vector3.up * _upwardAngleAdjustmentPercentage;
