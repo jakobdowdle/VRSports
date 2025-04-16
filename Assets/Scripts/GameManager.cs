@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public List<GameObject> Holes;
+    [SerializeField] private List<HoleManager> _holes;
     private int _currentHole;
     void Awake()
     {
@@ -13,25 +12,17 @@ public class GameManager : MonoBehaviour
         _currentHole = 1;
     }
 
-    public HoleManager GetCurrentHoleManager()
-    {
-        return Holes[_currentHole - 1].GetComponent<HoleManager>();
-    }
-
-    public GameObject GetCurrentHoleGameObject()
-    {
-        return Holes[_currentHole - 1];
-    }
-
-    public int GetCurrentHoleNumber()
-    {
-        return _currentHole;
-    }
+    public HoleManager GetCurrentHoleManager() => _holes[_currentHole - 1];
+    public int GetCurrentHoleNumber() => _currentHole;
 
     public int GetScore()
     {
         int score = 0;
-        for (int i = 0; i < Holes.Count; i++) score += Holes[i].GetComponent<HoleManager>().strokes;
+        for (int i = 0; i < _holes.Count; i++)
+        {
+            score += _holes[i].strokes;
+        }
+        _holes[0].strokes += 5;
         return score;
     }
 
@@ -44,13 +35,12 @@ public class GameManager : MonoBehaviour
     public void HoleComplete()
     {
         _currentHole++;
-        if (_currentHole <= Holes.Count){ return; }
-        
+        if (_currentHole <= _holes.Count) return; 
         PlayConfettiOnAllHoles();
     }
 
     public void PlayConfettiOnAllHoles()
     {
-        for (int i = 0; i < Holes.Count; i++) Holes[i].GetComponent<ParticleSystem>().Play();
+        for (int i = 0; i < _holes.Count; i++) _holes[i].ConfettiEffect.Play();
     }
 }

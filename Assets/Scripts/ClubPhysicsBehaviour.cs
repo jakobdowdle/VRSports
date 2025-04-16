@@ -24,20 +24,23 @@ public class ClubPhysicsBehaviour : MonoBehaviour
         GameManager.Instance.OnBallHit();
 
         BallPhysicsBehaviour ball = collision.gameObject.GetComponent<BallPhysicsBehaviour>();
-
-        Vector3 holeDirection = (ball.transform.position - GameManager.Instance.GetCurrentHoleManager().transform.position).normalized;
-        Vector3 swingDirection = (_headPositionCurrent - _headPositionLast).normalized;
-        Vector3 launchDirection = Vector3.Lerp(swingDirection, holeDirection, _angleCorrectionPercentage);
-        launchDirection += Vector3.up * _upwardAngleAdjustmentPercentage;
-
-        //Add collision force and direction to ball
-        ball.HitWithClub(launchDirection * _clubHitForce, collision.transform.position);
+        Vector3 launchVelocity = GetLaunchVelocity(ball);
+        ball.HitWithClub(launchVelocity, collision.transform.position);
     }
-
+    private Vector3 GetLaunchVelocity(BallPhysicsBehaviour ball)
+    {
+        Vector3 holeDirection = (ball.transform.position - GameManager.Instance.GetCurrentHoleManager().transform.position).normalized;
+        Vector3 swingVelocity = _headPositionCurrent - _headPositionLast;
+        Vector3 swingDirection = (swingVelocity).normalized;
+        Vector3 launchDirection = Vector3.Lerp(swingDirection, holeDirection, _angleCorrectionPercentage);
+        float hitForce = _clubHitForce * swingVelocity.magnitude;
+        Vector3 launchVelocity = (launchDirection * hitForce) + (Vector3.up * _upwardAngleAdjustmentPercentage);
+        return launchVelocity;
+    }
     private IEnumerator HitCooldown()
     {
         _onCoolDown = true;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         _onCoolDown = false;
     }
 }
