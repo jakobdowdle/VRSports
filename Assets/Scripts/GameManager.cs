@@ -1,13 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
     public static GameManager Instance;
     [SerializeField] private List<HoleManager> _holes;
     private int _currentHole;
-    void Awake()
-    {
+    void Awake() {
         Instance = this;
         _currentHole = 1;
     }
@@ -22,18 +20,15 @@ public class GameManager : MonoBehaviour
         {
             score += _holes[i].strokes;
         }
-        _holes[0].strokes += 5;
         return score;
     }
 
-    public void OnBallHit()
-    {
+    public void OnBallHit() {
         GetCurrentHoleManager().strokes++;
-        Debug.Log(GetCurrentHoleManager().strokes);
+        //Debug.Log(GetCurrentHoleManager().strokes);
     }
 
-    public void HoleComplete()
-    {
+    public void HoleComplete() {
         _currentHole++;
         if (_currentHole <= _holes.Count) return; 
         PlayConfettiOnAllHoles();
