@@ -1579,7 +1579,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387651601844419963, guid: b3711a16ab8d93441a03b96607064d91, type: 3}
       propertyPath: _clubHitForce
-      value: 2500
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 1387651601844419963, guid: b3711a16ab8d93441a03b96607064d91, type: 3}
       propertyPath: _upwardAngleAdjustmentPercentage
