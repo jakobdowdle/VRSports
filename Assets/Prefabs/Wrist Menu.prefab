@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 8189320753169007554}
   - component: {fileID: 8189320753169007555}
   - component: {fileID: 8189320753169007552}
+  - component: {fileID: 4314266481437206717}
   m_Layer: 5
   m_Name: Wrist Menu
   m_TagString: Untagged
@@ -211,6 +212,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!114 &4314266481437206717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8189320753169007614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8405472e5efdae84d971611a50b32834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneNumber: 0
 --- !u!1 &8189320753320245974
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +346,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8189320753320245979}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4314266481437206717}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8189320753441494529
 GameObject:
   m_ObjectHideFlags: 0
