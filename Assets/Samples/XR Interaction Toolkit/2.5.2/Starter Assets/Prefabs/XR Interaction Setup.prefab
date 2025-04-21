@@ -221,6 +221,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4134505312059479865}
     m_Modifications:
+    - target: {fileID: 1673287728444133584, guid: d2e9497e7d8e67942b495f7522aa1878, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 2382602852280525280, guid: d2e9497e7d8e67942b495f7522aa1878, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -268,6 +272,18 @@ PrefabInstance:
     - target: {fileID: 2382602852280525283, guid: d2e9497e7d8e67942b495f7522aa1878, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947354743011259593, guid: d2e9497e7d8e67942b495f7522aa1878, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062507484243326860, guid: d2e9497e7d8e67942b495f7522aa1878, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4311843132489558791, guid: d2e9497e7d8e67942b495f7522aa1878, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2e9497e7d8e67942b495f7522aa1878, type: 3}
