@@ -24,6 +24,7 @@ public class WristMenuBehaviour : MonoBehaviour
 
     void Update() {
         if (_openMenu.triggered) ToggleWristMenu();
+        if (_wristMenu.activeSelf) UpdateMenu();
     }
 
     private void ToggleWristMenu() {
