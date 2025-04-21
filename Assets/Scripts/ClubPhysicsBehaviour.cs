@@ -35,7 +35,6 @@ public class ClubPhysicsBehaviour : MonoBehaviour
         Vector3 launchDirection = Vector3.Lerp(swingDirection, holeDirection, _angleCorrectionPercentage);
         float scaledMultiplier = Mathf.Lerp(0.25f, 2f, Mathf.InverseLerp(0.01f, 0.25f, swingVelocity.magnitude));
         float hitForce = _clubHitForce * (scaledMultiplier);
-        Debug.Log(hitForce);
         Vector3 launchVelocity = (launchDirection * hitForce) + (Vector3.up * (_upwardAngleAdjustmentPercentage * scaledMultiplier));
         return launchVelocity;
     }
