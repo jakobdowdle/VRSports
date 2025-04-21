@@ -7,12 +7,18 @@ public class BallPhysicsBehaviour : MonoBehaviour
     private Renderer _objectRenderer;
     private TrailRenderer _trailRenderer;
     [SerializeField] private float _respawnTimer;
+    public static Vector3 Position;
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody>();
         _objectRenderer = GetComponent<Renderer>();
         _trailRenderer = GetComponent<TrailRenderer>();
         transform.position = GameManager.Instance.GetCurrentHoleManager().GetComponent<HoleManager>().BallStartPosition;
+    }
+
+    private void Update()
+    {
+        Position = transform.position;
     }
 
     public void HitWithClub(Vector3 force, Vector3 position)
