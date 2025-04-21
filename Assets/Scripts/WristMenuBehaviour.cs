@@ -35,7 +35,7 @@ public class WristMenuBehaviour : MonoBehaviour
     public void UpdateMenu() {
         _holeText.text = "Hole " + _gameManager.GetCurrentHoleNumber();
         _parText.text = "Par " + _gameManager.GetCurrentHoleManager().par;
-        _distanceText.text = _gameManager.GetCurrentHoleManager().holeDistance + " meters";
+        _distanceText.text = (Mathf.Round(_gameManager.GetCurrentHoleManager().holeDistance) * .1f) + " m";
         _scoreText.text = _gameManager.GetScore() + "";
         _strokeCounter.text = _gameManager.GetCurrentHoleManager().strokes + "";
     }
