@@ -96,7 +96,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 625255ae18a595e43b69ff17b89ece94, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 29599627}
   - component: {fileID: 29599629}
   - component: {fileID: 29599628}
+  - component: {fileID: 29599630}
   m_Layer: 5
   m_Name: Start Screen
   m_TagString: Untagged
@@ -201,6 +202,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29599626}
   m_CullTransparentMesh: 1
+--- !u!114 &29599630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29599626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8405472e5efdae84d971611a50b32834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneNumber: 1
 --- !u!1001 &56253091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -856,7 +870,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 315718370}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 29599630}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &315718370
 MonoBehaviour:
   m_ObjectHideFlags: 0
