@@ -393,7 +393,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6619212166008880561, guid: ad502956ffcb38f49a41df78fda384e7, type: 3}
 --- !u!114 &1387651601844419963
@@ -409,9 +409,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _headPoint: {fileID: 3997514611534922051}
-  _clubHitForce: 100
+  _clubHitForce: 600
   _angleCorrectionPercentage: 0.256
-  _upwardAngleAdjustmentPercentage: 0
+  _upwardAngleAdjustmentPercentage: 0.257
 --- !u!1001 &672623626580486192
 PrefabInstance:
   m_ObjectHideFlags: 0

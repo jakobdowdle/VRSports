@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(ParticleSystem))]
 public class HoleManager : MonoBehaviour
 {
     public ParticleSystem ConfettiEffect;
@@ -14,7 +15,6 @@ public class HoleManager : MonoBehaviour
         BallStartPosition = _ballStartObject.transform.position;
         _ballStartObject.SetActive(false);
         holeDistance = Vector3.Distance(transform.position, BallStartPosition);
-        strokes = 0;
     }
     private void OnCollisionEnter(Collision collision)
     {
